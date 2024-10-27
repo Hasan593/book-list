@@ -15,14 +15,14 @@ const Book = ({ books, setBooks, showModal, handleAddBook, handleCloseModal, lis
 
     return (
         <>
-            <Filter />
             {showModal &&
                 <BookModal
-                    handleAddBook={handleAddBook} 
-                    handleCloseModal={handleCloseModal}
-                    bookUpdate={bookUpdate}
+                handleAddBook={handleAddBook} 
+                handleCloseModal={handleCloseModal}
+                bookUpdate={bookUpdate}
                 />
             }
+            <Filter />
             {
                 displaySearch.length > 0 ?
                     <BookList 

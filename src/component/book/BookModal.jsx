@@ -71,7 +71,7 @@ const BookModal = ({handleAddBook, handleCloseModal, bookUpdate}) => {
     return (
         <>
             {/* Modal */}
-            <div onClick={handleCloseModal} className="fixed w-full min-h-screen bg-black bg-opacity-85 z-50 flex items-center justify-center">
+            <div onClick={handleCloseModal} className="fixed w-full min-h-screen bg-black bg-opacity-85 z-50 flex items-center top-0 justify-center">
                 <form
                     className="z-50 md:w-[1000px] xl:max-w-2xl bg-gray-700 dark:bg-[#262B28] border border-gray-200 dark:border-gray-600 rounded-lg p-8 space-y-6 overflow-auto h-[400px]"
                     onSubmit={e => e.preventDefault()}
