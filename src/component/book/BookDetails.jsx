@@ -52,7 +52,7 @@ const BookDetails = ({ selectBook, setSelectBook }) => {
                                 </div>
                                 <div className='flex justify-center md:justify-start'>
                                     <button className="flex items-center gap-3 focus:ring-cyan-700 focus:outline-none w-40 ring-1 ring-cyan-400 hover:ring-2 p-1 rounded-full">
-                                        <p className="h-8 w-24 justify-center p-3 bg-cyan-400 flex items-center rounded-full">Buy Now</p>
+                                        <p className="h-8 w-24 text-[10px] md:text-[15px] justify-center p-3 bg-cyan-400 flex items-center rounded-full">Buy Now</p>
                                         <p className="font-bold flex items-center gap-1 text-cyan-400">120 <FaBangladeshiTakaSign /></p>
                                     </button>
                                 </div>
