@@ -25,7 +25,9 @@ const BookLayout = () => {
     {/************* Book Add Form Modal **************/ }
     const handleAddBook = (newBook, addBook) => {
         if(addBook){
-            setBooks([...books, newBook]);
+            const updatedBooks = [...books, newBook]
+            const sortedBooks = updatedBooks.sort((a, b) => a.bookName.localeCompare(b.bookName));
+            setBooks(sortedBooks);
         }else{
             setBooks(
                 books.map(book => {
@@ -60,7 +62,7 @@ const BookLayout = () => {
             handleSearch={handleSearch}
             search={search}
             />
-            <Book
+            {<Book
                 handleAddBook={handleAddBook}
                 handleCloseModal={handleCloseModal}
                 books={books}
@@ -71,7 +73,7 @@ const BookLayout = () => {
                 search={search}
                 handleEditBook={handleEditBook}
                 bookUpdate={bookUpdate}
-            />
+            />}
         </>
     );
 };

@@ -8,30 +8,32 @@ import Filter from "./Filter";
 
 const Book = ({ books, setBooks, showModal, handleAddBook, handleCloseModal, list, search, handleEditBook, bookUpdate }) => {
 
+    console.log(books.length)
+
     const displaySearch = books.filter(book => {
         return book.bookName.toLowerCase().includes(search.toLowerCase());
     });
-    console.log(displaySearch)
 
     return (
         <>
             {showModal &&
                 <BookModal
-                handleAddBook={handleAddBook} 
-                handleCloseModal={handleCloseModal}
-                bookUpdate={bookUpdate}
+                    handleAddBook={handleAddBook}
+                    handleCloseModal={handleCloseModal}
+                    bookUpdate={bookUpdate}
                 />
             }
-            <Filter />
+            <Filter books={books} setBooks={setBooks}/>
             {
-                displaySearch.length > 0 ?
-                    <BookList 
-                        books={displaySearch} 
-                        setBooks={setBooks}
-                        list={list}
-                        handleEditBook={handleEditBook}
-                    /> :
-                    <h1 className="text-3xl text-center font-bold mt-52">কোনো বই নাই বই যুক্ত করুন </h1>
+                books.length <= 0 ? <h1 className="text-3xl text-center py-36 bg-white font-bold">কোনো বই নাই দয়াকরে বই যুক্ত করুন</h1> :
+                    displaySearch.length > 0 ?
+                        <BookList
+                            books={displaySearch}
+                            setBooks={setBooks}
+                            list={list}
+                            handleEditBook={handleEditBook}
+                        /> :
+                        <h1 className="text-3xl text-center py-36 font-bold bg-white">কোনো বই পাওয়া যাইনি</h1>
             }
         </>
     );
